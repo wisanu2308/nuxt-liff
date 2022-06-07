@@ -8,6 +8,10 @@
 <script>
 export default {
 
+  env: {
+    liffid: process.env.LIFF_ID || 'http://localhost:3000'
+  },
+
   data () {
     return {
       message: '',
@@ -17,14 +21,16 @@ export default {
   mounted () {
     // mounted() is rendered when DOM is rendered
     // wait liff.init()
-    this.$liffInit
-      .then(() => {
-        this.message = 'LIFF init succeeded.'
-      })
-      .catch((e) => {
-        this.message = 'LIFF init failed.'
-        this.error = e.toString()
-      })
+
+    // console.log(this.$liffInit)
+  //   this.$liffInit
+  //     .then(() => {
+  //       this.message = 'LIFF init succeeded.'
+  //     })
+  //     .catch((e) => {
+  //       this.message = 'LIFF init failed.'
+  //       this.error = e.toString()
+  //     })
   }
   
 }

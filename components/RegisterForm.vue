@@ -42,6 +42,7 @@
 </template>
 
 <script>
+
 export default {
 
   data() {
@@ -54,18 +55,25 @@ export default {
   methods: {
     submitForm() {
 
-      if (confirm("ต้องการบันทึกข้อมูล?",true,'TEST')) {
+
+      console.log(this.$liffInit)
+
+      // if (confirm("ต้องการบันทึกข้อมูล?")) {
         // console.log(this.txtName)
         // console.log(this.txtPhone)
-        liff
-          .sendMessages([{ type: "text", text: "Hello from LIFF2.0" }])
-          .then(() => {
-            window.alert("Message has been sent");
-          })
-          .catch(e => {
-            window.alert(e);
-          });
 
+        liff.sendMessages(
+          {
+            type: "text",
+            text: "Thank You!",
+          },
+        ).then(() => {
+          console.log("message sent");
+        }).catch((err) => {
+          console.log("error", err);
+        });
+          
+       
         // liff.sendMessages([
         //   {
         //     type: "text",
@@ -78,7 +86,7 @@ export default {
         // });
 
         liff.closeWindow()
-      }
+      // }
     }
   }
 }
