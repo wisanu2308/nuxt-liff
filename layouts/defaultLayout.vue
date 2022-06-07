@@ -14,18 +14,18 @@ export default {
       error: ''
     }
   },
-  // mounted () {
-  //   // mounted() is rendered when DOM is rendered
-  //   // wait liff.init()
-  //   this.$liffInit
-  //     .then(() => {
-  //       this.message = 'LIFF init succeeded.'
-  //     })
-  //     .catch((e) => {
-  //       this.message = 'LIFF init failed.'
-  //       this.error = e.toString()
-  //     })
-  // }
+  mounted () {
+    // mounted() is rendered when DOM is rendered
+    // wait liff.init()
+    this.$liffInit
+      .then(() => {
+        this.message = 'LIFF init succeeded.'
+      })
+      .catch((e) => {
+        this.message = 'LIFF init failed.'
+        this.error = e.toString()
+      })
+  }
   
 }
 </script>
