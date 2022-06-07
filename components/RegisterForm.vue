@@ -54,9 +54,20 @@ export default {
   methods: {
     submitForm() {
 
-      if (confirm("ต้องการบันทึกข้อมูล?")) {
-        console.log(this.txtName)
-        console.log(this.txtPhone)
+      if (confirm("ต้องการบันทึกข้อมูล?",true,'TEST')) {
+        // console.log(this.txtName)
+        // console.log(this.txtPhone)
+
+        liff.sendMessages([
+          {
+            type: "text",
+            text: "Hello, World!",
+          },
+        ]).then(() => {
+          console.log("message sent");
+        }).catch((err) => {
+          console.log("error", err);
+        });
       }
     }
   }
