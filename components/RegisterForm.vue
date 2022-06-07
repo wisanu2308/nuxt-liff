@@ -57,12 +57,14 @@ export default {
       if (confirm("ต้องการบันทึกข้อมูล?",true,'TEST')) {
         // console.log(this.txtName)
         // console.log(this.txtPhone)
-        liff.sendMessages([
-          {
-            type: "flex",
-            text: "Thank You!",
-          },
-        ])
+        liff
+          .sendMessages([{ type: "text", text: "Hello from LIFF2.0" }])
+          .then(() => {
+            window.alert("Message has been sent");
+          })
+          .catch(e => {
+            window.alert(e);
+          });
 
         // liff.sendMessages([
         //   {
