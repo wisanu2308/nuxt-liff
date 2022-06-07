@@ -58,12 +58,16 @@ export default {
         // console.log(this.txtName)
         // console.log(this.txtPhone)
 
-        this.$liffInit.sendMessages([
-          {
-            type: "flex",
-            text: "Thank You!",
-          },
-        ])
+        // this.$liffInit.then(() => {
+        //   this.message = 'LIFF init succeeded.'
+        // })
+
+        // liff.sendMessages([
+        //   {
+        //     type: "flex",
+        //     text: "Thank You!",
+        //   },
+        // ])
 
         // liff.sendMessages([
         //   {
