@@ -58,19 +58,17 @@ export default {
         // console.log(this.txtName)
         // console.log(this.txtPhone)
 
-        liff
-          .then(() => {
-            liff.sendMessages([
-              {
-                type: "text",
-                text: "Thank You!",
-              },
-            ])
-          })
-          .catch((e) => {
-            this.message = 'LIFF init failed.'
-            this.error = e.toString()
-          })
+        this.$liffInit.then(() => {
+          this.sendMessages([
+            {
+              type: "text",
+              text: "Thank You!",
+            },
+          ])
+        }).catch((e) => {
+          this.message = 'LIFF init failed.'
+          this.error = e.toString()
+        })
 
         // liff.sendMessages([
         //   {
