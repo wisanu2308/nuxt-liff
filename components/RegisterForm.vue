@@ -73,18 +73,7 @@ export default {
           console.log("error", err);
         });
           
-       
-        // liff.sendMessages([
-        //   {
-        //     type: "text",
-        //     text: "Thank You!",
-        //   },
-        // ]).then(() => {
-        //   console.log("message sent");
-        // }).catch((err) => {
-        //   console.log("error", err);
-        // });
-
+     
         liff.closeWindow()
       // }
     }
