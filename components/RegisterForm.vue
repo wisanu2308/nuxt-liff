@@ -64,8 +64,8 @@ export default {
 
         liff.sendMessages(
           {
-            type: "text",
-            text: "Thank You!",
+            "type": "text",
+            "text": "Thank You!",
           },
         ).then(() => {
           console.log("message sent");
