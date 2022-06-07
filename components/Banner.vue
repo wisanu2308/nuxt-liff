@@ -1,10 +1,10 @@
 <template>
   <div class="bg-slate-200 py-4 mb-10">
-    <div class="flex justify-center text-2xl font-bold pb-8">
+    <div class="flex justify-center text-2xl font-bold">
       Liff App
     </div>
 
-    <div class="flex justify-center space-x-8">
+    <div class="hidden justify-center space-x-8">
       <div
         v-for="(menu, i) in menuList"
         :key="i"

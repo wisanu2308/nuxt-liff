@@ -1,30 +1,15 @@
 <template>
   <div class="flex justify-center">
-    
     <div class="flex flex-col items-center">
-
-      <div class="text-3xl font-bold">create-liff-app</div>
-
-      <div class="flex flex-col items-center py-5">
-
-        <p v-if="message">
-          {{ message }}
-        </p>
-        <p v-if="error">
-          <code>{{ error }}</code>
-        </p>
-        <a href="https://developers.line.biz/ja/docs/liff/" target="_blank" rel="noreferrer">
-          LIFF Documentation
-        </a>
-
-      </div>
+      
+      <RegisterForm />
       
     </div>
-
   </div>
 </template>
 
 <script>
+
 export default {
 
   layout: 'defaultLayout',
