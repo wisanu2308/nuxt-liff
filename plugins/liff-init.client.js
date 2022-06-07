@@ -10,7 +10,7 @@ export default (_, inject) => {
   inject('liff', liff);
 
   // execute liff.init()
-  const initResult = liff.init({liffId: "1657196915-Q0xynBn4"})
+  const initResult = liff.init({liffId: "1657196915-J49pw7wn"})
     .then(() => {
       console.log('LIFF init succeeded.');
     })
