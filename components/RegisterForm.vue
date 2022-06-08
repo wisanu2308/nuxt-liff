@@ -37,7 +37,7 @@
       บันทึก
     </div>
     
-    <div>errMessage : {{this.errMessage}}</div>
+    <!-- <div>errMessage : {{this.errMessage}}</div> -->
     <div>displayName : {{this.displayName}}</div>
 
   </div>
