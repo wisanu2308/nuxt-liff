@@ -11,6 +11,7 @@
         <input 
           type="text" 
           placeholder="กรอกชื่อ-นามสกุล"
+          required
           class="outline-none" 
           v-model="txtName"
         >
@@ -24,6 +25,7 @@
           type="text" 
           placeholder="กรอกเบอร์โทร"
           maxlength="10"
+          required
           class="outline-none" 
           v-model="txtPhone"
         >
