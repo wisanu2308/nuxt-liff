@@ -96,7 +96,7 @@ export default {
         this.$liff.sendMessages([
           {
             type: "flex",
-            altText: "This is a Flex message",
+            altText: "ดูผลการลงทะเบียน",
             contents: {
               "type": "bubble",
               "body": {
