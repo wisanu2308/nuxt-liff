@@ -37,11 +37,7 @@
       บันทึก
     </div>
 
-    <div class="w-full">userProfileId = {{userProfileId}}</div>
     <div class="w-full">displayName = {{displayName}}</div>
-    <div class="w-full">statusMessage = {{statusMessage}}</div>
-    <div class="w-full">txtName = {{txtName}}</div>
-    <div class="w-full">txtPhone = {{txtPhone}}</div>
 
   </div>
     
@@ -86,7 +82,7 @@ export default {
     }).catch(
       err => console.error(err)
     )
-    
+
       if (confirm("ต้องการบันทึกข้อมูล?")) {
         liff.sendMessages([
           {
