@@ -40,6 +40,8 @@
     <div class="w-full">userProfileId = {{userProfileId}}</div>
     <div class="w-full">displayName = {{displayName}}</div>
     <div class="w-full">statusMessage = {{statusMessage}}</div>
+    <div class="w-full">txtName = {{txtName}}</div>
+    <div class="w-full">txtPhone = {{txtPhone}}</div>
 
   </div>
     
@@ -84,7 +86,7 @@ export default {
           liff.sendMessages([
             {
               type: "flex",
-              text: "ชื่อ: " + this.txtName + " เบอร์โทร: " + this.txtPhone,
+              text: `ชื่อ: ${this.txtName} เบอร์โทร ${this.txtPhone}`,
             },
           ])
         }
