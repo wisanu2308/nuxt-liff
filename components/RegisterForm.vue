@@ -60,18 +60,13 @@ export default {
 
   mounted () {
 
-    let getName = ""
-
     if (!this.$liff.isLoggedIn()) {
       this.$liff.login()
     }
 
     this.$liff.getProfile().then(profile => {
-      // this.displayName = profile.displayName;
-      getName = profile.displayName;
+      this.displayName = profile.displayName;
     })
-    
-    this.displayName = getName
 
   },
 
