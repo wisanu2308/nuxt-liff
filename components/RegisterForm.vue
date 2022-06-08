@@ -62,34 +62,35 @@ export default {
   methods: {
     submitForm() {
 
-      if (!liff.isLoggedIn()) {
-        liff.login();
-      } else {
-
-        console.log(liff.getProfile())
-        
-        liff.getProfile().then(profile => {
-          this.userProfileId = profile.userId;
-          this.displayName = profile.displayName;
-          this.statusMessage = profile.statusMessage;
-        }).catch(
-          err => console.error(err)
-        )
-
-        liff.sendMessages([
-          {
-            type: "text",
-            text: "Hello, World!",
-          },
-        ])
-      }
-
-      // if (confirm("ต้องการบันทึกข้อมูล?")) {
+      if (confirm("ต้องการบันทึกข้อมูล?")) {
         // console.log(this.txtName)
         // console.log(this.txtPhone)
 
-        // this.$liff.closeWindow()
-      // }
+        if (!liff.isLoggedIn()) {
+          liff.login();
+        } else {
+          
+
+          console.log(liff.getProfile())
+
+          liff.getProfile().then(profile => {
+            this.userProfileId = profile.userId;
+            this.displayName = profile.displayName;
+            this.statusMessage = profile.statusMessage;
+          }).catch(
+            err => console.error(err)
+          )
+
+          liff.sendMessages([
+            {
+              type: "flex",
+              text: "ชื่อ: " + this.txtName + " เบอร์โทร: " + this.txtPhone,
+            },
+          ])
+        }
+        
+        this.$liff.closeWindow()
+      }
     }
   }
 }
