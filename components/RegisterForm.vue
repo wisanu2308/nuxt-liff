@@ -37,7 +37,6 @@
       บันทึก
     </div>
     
-    <!-- <div>errMessage : {{this.errMessage}}</div> -->
     <div>displayName : {{this.displayName}}</div>
 
   </div>
@@ -60,23 +59,20 @@ export default {
   },
 
   mounted () {
-    let name = ""
 
-    // if (!this.$liff.isLoggedIn()) {
+    let getName = ""
+
+    if (!this.$liff.isLoggedIn()) {
       this.$liff.login()
-    // }
+    }
 
-    this.errMessage = this.$liff.getProfile()
     this.$liff.getProfile().then(profile => {
-      this.userProfileId = profile.userId;
-      this.displayName = profile.displayName;
-      this.statusMessage = profile.statusMessage;
-      name = profile.displayName;
-    }).catch(
-      err => console.error(err)
-    )
+      // this.displayName = profile.displayName;
+      getName = profile.displayName;
+    })
     
-    this.displayName = name
+    this.displayName = getName
+
   },
 
   methods: {
