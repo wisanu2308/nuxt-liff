@@ -37,8 +37,6 @@
       บันทึก
     </div>
 
-    <div class="w-full">isInClient = {{isInClient}}</div>
-    <div class="w-full">isLoggedIn = {{isLoggedIn}}</div>
     <div class="w-full">userProfileId = {{userProfileId}}</div>
     <div class="w-full">displayName = {{displayName}}</div>
     <div class="w-full">statusMessage = {{statusMessage}}</div>
@@ -68,6 +66,8 @@ export default {
         liff.login();
       } else {
 
+        console.log(liff.getProfile())
+        
         liff.getProfile().then(profile => {
           this.userProfileId = profile.userId;
           this.displayName = profile.displayName;
