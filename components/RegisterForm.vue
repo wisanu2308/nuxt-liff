@@ -37,8 +37,8 @@
       บันทึก
     </div>
     
-    <div>displayName : {{this.displayName}}</div>
     <div>errMessage : {{this.errMessage}}</div>
+    <div>displayName : {{this.displayName}}</div>
 
   </div>
     
@@ -65,10 +65,6 @@ export default {
     }
 
     this.errMessage = this.$liff.getProfile()
-    this.displayName = this.$liff.getProfile().then(
-      profile => { return profile.displayName }
-    )
-   
     this.$liff.getProfile().then(profile => {
       this.userProfileId = profile.userId;
       this.displayName = profile.displayName;
@@ -76,6 +72,8 @@ export default {
     }).catch(
       err => console.error(err)
     )
+    
+    this.displayName = profile.displayName
   },
 
   methods: {
