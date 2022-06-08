@@ -85,7 +85,7 @@ export default {
 
           liff.sendMessages([
             {
-              type: "flex",
+              type: "text",
               text: `ชื่อ: ${this.txtName} เบอร์โทร ${this.txtPhone}`,
             },
           ])
