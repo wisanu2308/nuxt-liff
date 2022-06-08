@@ -60,7 +60,7 @@ export default {
   },
 
   mounted () {
-    const name = ""
+    let name = ""
 
     if (!this.$liff.isLoggedIn()) {
       this.$liff.login()
