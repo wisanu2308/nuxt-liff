@@ -37,13 +37,13 @@
       บันทึก
     </div>
 
-    <div>isInClient = {{isInClient}}</div>
-    <div>isLoggedIn = {{isLoggedIn}}</div>
-    <!-- <div>getAccessToken = {{getAccessToken}}</div> -->
-    <div>userProfile = {{userProfile}}</div>
-    <div>displayName = {{displayName}}</div>
-    <div>statusMessage = {{statusMessage}}</div>
-    <div>pictureUrl = {{pictureUrl}}</div>
+    <div class="w-full">isInClient = {{isInClient}}</div>
+    <div class="w-full">isLoggedIn = {{isLoggedIn}}</div>
+    <!-- <div class="w-full">getAccessToken = {{getAccessToken}}</div> -->
+    <div class="w-full">userProfile = {{userProfile}}</div>
+    <div class="w-full">displayName = {{displayName}}</div>
+    <div class="w-full">statusMessage = {{statusMessage}}</div>
+    <div class="w-full">pictureUrl = {{pictureUrl}}</div>
 
   </div>
     
