@@ -37,6 +37,7 @@
       บันทึก
     </div>
 
+    {{liffError}}
   </div>
     
 </template>
@@ -49,32 +50,38 @@ export default {
     return {
       txtName: "",
       txtPhone: "",
+      liffError: "",
     }
   },
 
   methods: {
     submitForm() {
 
+      // if (!liff.isLoggedIn()) {
+      //   liff.login({ redirectUri: "https://example.com/path" });
+      // }
+      liffError = liff.isInClient()
+      console.log(liff.getOS())
+      console.log(liff.getLanguage())
+      console.log(liff.isInClient())
+      console.log(liff.isLoggedIn())
 
-      console.log(this.$liffInit)
+      // this.$liffInit
+      //   .then(() => {
+      //     this.sdkVersion = liff.getVersion();
+      //   })
+      //   .catch((error) => {
+      //     this.liffError = error;
+      //   });
+        
 
       // if (confirm("ต้องการบันทึกข้อมูล?")) {
         // console.log(this.txtName)
         // console.log(this.txtPhone)
 
-        liff.sendMessages(
-          {
-            "type": "text",
-            "text": "Thank You!",
-          },
-        ).then(() => {
-          console.log("message sent");
-        }).catch((err) => {
-          console.log("error", err);
-        });
           
      
-        liff.closeWindow()
+        // this.$liff.closeWindow()
       // }
     }
   }
