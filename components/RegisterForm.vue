@@ -205,7 +205,9 @@ export default {
             }
             
           },
-        ])
+        ]).then( () => {
+          this.$liff.closeWindow()
+        })
       }
       // this.$liff.closeWindow()
 
