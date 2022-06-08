@@ -81,6 +81,7 @@ export default {
         this.isInClient = liff.isInClient()
         this.isLoggedIn = liff.isLoggedIn()
         this.getProfile = liff.getProfile()
+        console.log(liff.getProfile())
       }
 
       
