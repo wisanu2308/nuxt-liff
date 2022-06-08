@@ -82,14 +82,6 @@ export default {
 
     submitForm() {
 
-      this.$liff.getProfile().then(profile => {
-        this.userProfileId = profile.userId;
-        this.displayName = profile.displayName;
-        this.statusMessage = profile.statusMessage;
-      }).catch(
-        err => console.error(err)
-      )
-
       if (confirm("ต้องการบันทึกข้อมูล?")) {
 
         // this.$liff.sendMessages([
@@ -147,26 +139,6 @@ export default {
                         "text": "รายละเอียด",
                         "weight": "bold",
                         "size": "xs"
-                      },
-                      {
-                        "type": "box",
-                        "layout": "horizontal",
-                        "contents": [
-                          {
-                            "type": "text",
-                            "text": "Line Name",
-                            "size": "sm",
-                            "color": "#555555",
-                            "flex": 0
-                          },
-                          {
-                            "type": "text",
-                            "text": `${this.displayName}`,
-                            "size": "sm",
-                            "color": "#111111",
-                            "align": "end"
-                          }
-                        ]
                       },
                       {
                         "type": "box",
