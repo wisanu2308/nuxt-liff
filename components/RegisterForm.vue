@@ -76,19 +76,22 @@ export default {
   methods: {
 
     setProfile() {
-      this.$liff.getProfile().then(profile => {
-        this.userProfileId = profile.userId;
-        this.displayName = profile.displayName;
-        this.statusMessage = profile.statusMessage;
-      }).catch(
-        err => console.error(err)
+      setTimeout(
+        this.$liff.getProfile().then(profile => {
+          this.userProfileId = profile.userId;
+          this.displayName = profile.displayName;
+          this.statusMessage = profile.statusMessage;
+        }).catch(
+          err => console.error(err)
+        ),
+        3000
       )
     },
 
     submitForm() {
 
       this.setProfile()
-      
+
       if (confirm("ต้องการบันทึกข้อมูล?")) {
 
         this.$liff.sendMessages([
