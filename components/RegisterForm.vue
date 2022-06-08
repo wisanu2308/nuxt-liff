@@ -60,7 +60,6 @@ export default {
   },
 
   mounted () {
-    const name = ""
 
     if (!this.$liff.isLoggedIn()) {
       this.$liff.login()
@@ -71,12 +70,10 @@ export default {
       this.userProfileId = profile.userId;
       this.displayName = profile.displayName;
       this.statusMessage = profile.statusMessage;
-      name = profile.displayName;
     }).catch(
       err => console.error(err)
     )
     
-    this.displayName = name
   },
 
   methods: {
@@ -85,14 +82,14 @@ export default {
 
       if (confirm("ต้องการบันทึกข้อมูล?")) {
 
-        this.$liff.sendMessages([
-          {
-            type: "text",
-            text: `I am ${this.displayName}`,
-          },
-        ]).catch(
-          err => this.errMessage = err
-        )
+        // this.$liff.sendMessages([
+        //   {
+        //     type: "text",
+        //     text: `I am ${this.displayName}`,
+        //   },
+        // ]).catch(
+        //   err => this.errMessage = err
+        // )
 
         this.$liff.sendMessages([
           {
