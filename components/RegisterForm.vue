@@ -62,9 +62,9 @@ export default {
   mounted () {
     let name = ""
 
-    if (!this.$liff.isLoggedIn()) {
+    // if (!this.$liff.isLoggedIn()) {
       this.$liff.login()
-    }
+    // }
 
     this.errMessage = this.$liff.getProfile()
     this.$liff.getProfile().then(profile => {
