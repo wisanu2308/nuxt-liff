@@ -60,6 +60,8 @@ export default {
   },
 
   mounted () {
+    const name = ""
+
     if (!this.$liff.isLoggedIn()) {
       this.$liff.login()
     }
@@ -69,11 +71,12 @@ export default {
       this.userProfileId = profile.userId;
       this.displayName = profile.displayName;
       this.statusMessage = profile.statusMessage;
+      name = profile.displayName;
     }).catch(
       err => console.error(err)
     )
     
-    this.displayName = profile.displayName
+    this.displayName = name
   },
 
   methods: {
