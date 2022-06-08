@@ -40,7 +40,7 @@
     <div>isInClient = {{isInClient}}</div>
     <div>isLoggedIn = {{isLoggedIn}}</div>
     <div>getProfile = {{JSON.stringify(getProfile)}}</div>
-    <div>getProfile = {{getProfile.displayName}}</div>
+    <div>getProfile = {{getProfile['PromiseResult'].displayName}}</div>
 
   </div>
     
