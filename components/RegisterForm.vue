@@ -209,7 +209,7 @@ export default {
         //   },
         // ])
       }
-      this.$liff.closeWindow()
+      // this.$liff.closeWindow()
 
     }
   }
