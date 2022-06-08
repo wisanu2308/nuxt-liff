@@ -77,9 +77,9 @@ export default {
       if (confirm("ต้องการบันทึกข้อมูล?")) {
         liff.sendMessages([
           {
-            type: "flex",
-            altText: "This is a Flex message",
-            contents: {
+            "type": "flex",
+            "altText": "This is a Flex message",
+            "contents": {
               "type": "bubble",
               "body": {
                 "type": "box",
@@ -97,7 +97,7 @@ export default {
                     "weight": "bold",
                     "size": "xxl",
                     "margin": "md",
-                    "text": this.txtName
+                    "text": `${this.txtName}`
                   },
                   {
                     "type": "text",
@@ -135,7 +135,7 @@ export default {
                           },
                           {
                             "type": "text",
-                            "text": this.txtName,
+                            "text": `${this.txtName}`,
                             "size": "sm",
                             "color": "#111111",
                             "align": "end"
@@ -155,7 +155,7 @@ export default {
                           },
                           {
                             "type": "text",
-                            "text": this.txtPhone,
+                            "text": `${this.txtPhone}`,
                             "size": "sm",
                             "color": "#111111",
                             "align": "end"
