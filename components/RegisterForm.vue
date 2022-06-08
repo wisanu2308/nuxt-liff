@@ -37,8 +37,8 @@
       บันทึก
     </div>
 
-    isInClient = {{isInClient}}
-    isLoggedIn = {{isLoggedIn}}
+    <div>isInClient = {{isInClient}}</div>
+    <div>isLoggedIn = {{isLoggedIn}}</div>
   </div>
     
 </template>
