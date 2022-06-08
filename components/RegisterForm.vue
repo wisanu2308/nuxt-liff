@@ -37,8 +37,6 @@
       บันทึก
     </div>
 
-    <!-- <div class="w-full">displayName = {{displayName}}</div> -->
-
   </div>
     
 </template>
@@ -58,145 +56,153 @@ export default {
   },
 
   mounted () {
-
-    if (!this.$liff.isLoggedIn()) {
-      this.$liff.login()
+    if (!liff.isLoggedIn()) {
+      liff.login()
     }
 
-    this.$liff.getProfile().then(p => {
-      this.userProfileId = p.userId;
-      this.displayName = p.displayName;
-      this.statusMessage = p.statusMessage;
-    })
-
+    console.log(liff.getProfile())
+    liff.getProfile().then(profile => {
+      this.userProfileId = profile.userId;
+      this.displayName = profile.displayName;
+      this.statusMessage = profile.statusMessage;
+    }).catch(
+      err => console.error(err)
+    )
   },
 
   methods: {
     submitForm() {
-      
+
+      liff.getProfile().then(profile => {
+        this.userProfileId = profile.userId;
+        this.displayName = profile.displayName;
+        this.statusMessage = profile.statusMessage;
+      }).catch(
+        err => console.error(err)
+      )
+
       if (confirm("ต้องการบันทึกข้อมูล?")) {
 
-        this.$liff.sendMessages([
+        liff.sendMessages([
           {
             type: "text",
-            text: "Hello, World!",
+            text: `I am ${this.displayName}`,
           },
         ])
 
-        // liff.sendMessages([
-        //   {
-        //     type: "flex",
-        //     altText: "This is a Flex message",
-        //     contents: {
-        //       "type": "bubble",
-        //       "body": {
-        //         "type": "box",
-        //         "layout": "vertical",
-        //         "contents": [
-        //           {
-        //             "type": "text",
-        //             "text": "ผลการลงทะเบียน",
-        //             "weight": "bold",
-        //             "color": "#1DB446",
-        //             "size": "sm"
-        //           },
-        //           {
-        //             "type": "text",
-        //             "weight": "bold",
-        //             "size": "xxl",
-        //             "margin": "md",
-        //             "text": `${this.txtName}`
-        //           },
-        //           {
-        //             "type": "text",
-        //             "text": "Wisanu Liff",
-        //             "size": "xs",
-        //             "color": "#aaaaaa",
-        //             "wrap": true
-        //           },
-        //           {
-        //             "type": "separator",
-        //             "margin": "xxl"
-        //           },
-        //           {
-        //             "type": "box",
-        //             "layout": "vertical",
-        //             "margin": "xxl",
-        //             "spacing": "sm",
-        //             "contents": [
-        //               {
-        //                 "type": "text",
-        //                 "text": "รายละเอียด",
-        //                 "weight": "bold",
-        //                 "size": "xs"
-        //               },
-        //               {
-        //                 "type": "box",
-        //                 "layout": "horizontal",
-        //                 "contents": [
-        //                   {
-        //                     "type": "text",
-        //                     "text": "Name",
-        //                     "size": "sm",
-        //                     "color": "#555555",
-        //                     "flex": 0
-        //                   },
-        //                   {
-        //                     "type": "text",
-        //                     "text": `${this.txtName}`,
-        //                     "size": "sm",
-        //                     "color": "#111111",
-        //                     "align": "end"
-        //                   }
-        //                 ]
-        //               },
-        //               {
-        //                 "type": "box",
-        //                 "layout": "horizontal",
-        //                 "contents": [
-        //                   {
-        //                     "type": "text",
-        //                     "text": "Phone",
-        //                     "size": "sm",
-        //                     "color": "#555555",
-        //                     "flex": 0
-        //                   },
-        //                   {
-        //                     "type": "text",
-        //                     "text": `${this.txtPhone}`,
-        //                     "size": "sm",
-        //                     "color": "#111111",
-        //                     "align": "end"
-        //                   }
-        //                 ]
-        //               }
-        //             ]
-        //           },
-        //           {
-        //             "type": "separator",
-        //             "margin": "xxl"
-        //           },
-        //           {
-        //             "type": "box",
-        //             "layout": "horizontal",
-        //             "margin": "md",
-        //             "contents": [
-        //               {
-        //                 "type": "text",
-        //                 "text": "ลงทะเบียนเรียบร้อย",
-        //                 "color": "#aaaaaa",
-        //                 "size": "xs",
-        //                 "align": "end"
-        //               }
-        //             ]
-        //           }
-        //         ]
-        //       }
-        //     }
+        liff.sendMessages([
+          {
+            type: "flex",
+            altText: "This is a Flex message",
+            contents: {
+              "type": "bubble",
+              "body": {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "ผลการลงทะเบียน",
+                    "weight": "bold",
+                    "color": "#1DB446",
+                    "size": "sm"
+                  },
+                  {
+                    "type": "text",
+                    "weight": "bold",
+                    "size": "xxl",
+                    "margin": "md",
+                    "text": `${this.txtName}`
+                  },
+                  {
+                    "type": "text",
+                    "text": "Wisanu Liff",
+                    "size": "xs",
+                    "color": "#aaaaaa",
+                    "wrap": true
+                  },
+                  {
+                    "type": "separator",
+                    "margin": "xxl"
+                  },
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "margin": "xxl",
+                    "spacing": "sm",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": "รายละเอียด",
+                        "weight": "bold",
+                        "size": "xs"
+                      },
+                      {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "Name",
+                            "size": "sm",
+                            "color": "#555555",
+                            "flex": 0
+                          },
+                          {
+                            "type": "text",
+                            "text": `${this.txtName}`,
+                            "size": "sm",
+                            "color": "#111111",
+                            "align": "end"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "Phone",
+                            "size": "sm",
+                            "color": "#555555",
+                            "flex": 0
+                          },
+                          {
+                            "type": "text",
+                            "text": `${this.txtPhone}`,
+                            "size": "sm",
+                            "color": "#111111",
+                            "align": "end"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "separator",
+                    "margin": "xxl"
+                  },
+                  {
+                    "type": "box",
+                    "layout": "horizontal",
+                    "margin": "md",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": "ลงทะเบียนเรียบร้อย",
+                        "color": "#aaaaaa",
+                        "size": "xs",
+                        "align": "end"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
             
-        //   },
-        // ])
-     
+          },
+        ])
       }
       this.$liff.closeWindow()
 
