@@ -78,6 +78,15 @@ export default {
 
   methods: {
     submitForm() {
+
+      liff.getProfile().then(profile => {
+      this.userProfileId = profile.userId;
+      this.displayName = profile.displayName;
+      this.statusMessage = profile.statusMessage;
+    }).catch(
+      err => console.error(err)
+    )
+    
       if (confirm("ต้องการบันทึกข้อมูล?")) {
         liff.sendMessages([
           {
