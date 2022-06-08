@@ -36,6 +36,12 @@
     >
       บันทึก
     </div>
+    
+    <div>txtName : {{this.txtName}}</div>
+    <div>txtPhone : {{this.txtPhone}}</div>
+    <div>userProfileId : {{this.userProfileId}}</div>
+    <div>displayName : {{this.displayName}}</div>
+    <div>statusMessage : {{this.statusMessage}}</div>
 
   </div>
     
