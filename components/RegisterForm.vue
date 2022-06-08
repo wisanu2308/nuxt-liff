@@ -61,6 +61,11 @@ export default {
       //   liff.login({ redirectUri: "https://example.com/path" });
       // }
       this.liffError = liff.isInClient()
+
+      if (!liff.isLoggedIn()) {
+        liff.login();
+      }
+
       console.log(liff.getOS())
       console.log(liff.getLanguage())
       console.log(liff.isInClient())
