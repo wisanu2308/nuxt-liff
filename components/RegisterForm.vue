@@ -39,7 +39,7 @@
 
     <div>isInClient = {{isInClient}}</div>
     <div>isLoggedIn = {{isLoggedIn}}</div>
-    <div>getProfile = {{JSON.stringify(getProfile)}}</div>
+    <div>getAccessToken = {{getAccessToken}}</div>
     <div>getProfile = {{getProfile.displayName}}</div>
 
   </div>
@@ -56,22 +56,13 @@ export default {
       txtPhone: "",
       isInClient: "",
       isLoggedIn: "",
+      getAccessToken: "",
       getProfile: "",
     }
   },
 
   methods: {
     submitForm() {
-
-      // if (!liff.isLoggedIn()) {
-      //   liff.login({ redirectUri: "https://example.com/path" });
-      // }
-      
-
-      // console.log(liff.getOS())
-      // console.log(liff.getLanguage())
-      // console.log(liff.isInClient())
-      // console.log(liff.isLoggedIn())
 
       if (!liff.isLoggedIn()) {
         liff.login();
@@ -81,26 +72,15 @@ export default {
       } else {
         this.isInClient = liff.isInClient()
         this.isLoggedIn = liff.isLoggedIn()
+        this.getAccessToken = liff.getAccessToken()
         this.getProfile = liff.getProfile()
         console.log(liff.getProfile())
       }
-
-      
-      // this.$liffInit
-      //   .then(() => {
-      //     this.sdkVersion = liff.getVersion();
-      //   })
-      //   .catch((error) => {
-      //     this.liffError = error;
-      //   });
-        
 
       // if (confirm("ต้องการบันทึกข้อมูล?")) {
         // console.log(this.txtName)
         // console.log(this.txtPhone)
 
-          
-     
         // this.$liff.closeWindow()
       // }
     }
