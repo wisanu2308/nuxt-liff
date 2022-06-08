@@ -60,10 +60,6 @@ export default {
 
   mounted () {
 
-    if (!this.$liff.isLoggedIn()) {
-      this.$liff.login()
-    }
-
     this.$liff.getProfile().then(profile => {
       this.displayName = profile.displayName;
     })
@@ -88,7 +84,7 @@ export default {
         this.$liff.sendMessages([
           {
             type: "flex",
-            altText: "ดูผลการลงทะเบียน",
+            altText: "New Flex Message!",
             contents: {
               "type": "bubble",
               "body": {

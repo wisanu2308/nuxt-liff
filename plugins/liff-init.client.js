@@ -13,6 +13,9 @@ export default (_, inject) => {
   const initResult = liff.init({liffId: "1657200038-ba6qNZd6"})
     .then(() => {
       console.log('LIFF init succeeded.');
+      if (!liff.isLoggedIn()) {
+        liff.login()
+      }
     })
     .catch(error => {
       console.log('LIFF init failed.');
