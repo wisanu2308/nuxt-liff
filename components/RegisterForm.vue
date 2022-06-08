@@ -59,12 +59,12 @@ export default {
   },
 
   mounted () {
-    if (!liff.isLoggedIn()) {
-      liff.login()
+    if (!this.$liff.isLoggedIn()) {
+      this.$liff.login()
     }
 
-    console.log(liff.getProfile())
-    liff.getProfile().then(profile => {
+    console.log(this.$liff.getProfile())
+    this.$liff.getProfile().then(profile => {
       this.userProfileId = profile.userId;
       this.displayName = profile.displayName;
       this.statusMessage = profile.statusMessage;
@@ -76,7 +76,7 @@ export default {
   methods: {
     submitForm() {
 
-      liff.getProfile().then(profile => {
+      this.$liff.getProfile().then(profile => {
         this.userProfileId = profile.userId;
         this.displayName = profile.displayName;
         this.statusMessage = profile.statusMessage;
@@ -86,7 +86,7 @@ export default {
 
       if (confirm("ต้องการบันทึกข้อมูล?")) {
 
-        liff.sendMessages([
+        this.$liff.sendMessages([
           {
             type: "text",
             text: `I am ${this.displayName}`,
@@ -95,7 +95,7 @@ export default {
           err => this.errMessage = err
         )
 
-        // liff.sendMessages([
+        // this.$liff.sendMessages([
         //   {
         //     type: "flex",
         //     altText: "This is a Flex message",
