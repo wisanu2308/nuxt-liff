@@ -146,6 +146,26 @@ export default {
                         "contents": [
                           {
                             "type": "text",
+                            "text": "Line Name",
+                            "size": "sm",
+                            "color": "#555555",
+                            "flex": 0
+                          },
+                          {
+                            "type": "text",
+                            "text": `${this.displayName}`,
+                            "size": "sm",
+                            "color": "#111111",
+                            "align": "end"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                          {
+                            "type": "text",
                             "text": "Name",
                             "size": "sm",
                             "color": "#555555",
@@ -209,7 +229,6 @@ export default {
           this.$liff.closeWindow()
         })
       }
-      // this.$liff.closeWindow()
 
     }
   }
