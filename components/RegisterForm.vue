@@ -39,11 +39,9 @@
 
     <div class="w-full">isInClient = {{isInClient}}</div>
     <div class="w-full">isLoggedIn = {{isLoggedIn}}</div>
-    <!-- <div class="w-full">getAccessToken = {{getAccessToken}}</div> -->
     <div class="w-full">userProfile = {{userProfile}}</div>
     <div class="w-full">displayName = {{displayName}}</div>
     <div class="w-full">statusMessage = {{statusMessage}}</div>
-    <div class="w-full">pictureUrl = {{pictureUrl}}</div>
 
   </div>
     
@@ -59,11 +57,9 @@ export default {
       txtPhone: "",
       isInClient: "",
       isLoggedIn: "",
-      getAccessToken: "",
       userProfile: "",
       displayName: "",
       statusMessage: "",
-      pictureUrl: "",
     }
   },
 
@@ -78,12 +74,10 @@ export default {
       } else {
         this.isInClient = liff.isInClient()
         this.isLoggedIn = liff.isLoggedIn()
-        this.getAccessToken = liff.getAccessToken()
         liff.getProfile().then(profile => {
           this.userProfile = profile.userId;
           this.displayName = profile.displayName;
           this.statusMessage = profile.statusMessage;
-          this.pictureUrl = profile.pictureUrl;
         }).catch(
           err => console.error(err)
         );
