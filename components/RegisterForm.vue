@@ -39,7 +39,7 @@
 
     <div>isInClient = {{isInClient}}</div>
     <div>isLoggedIn = {{isLoggedIn}}</div>
-    <div>getAccessToken = {{getAccessToken}}</div>
+    <!-- <div>getAccessToken = {{getAccessToken}}</div> -->
     <div>userProfile = {{userProfile}}</div>
     <div>displayName = {{displayName}}</div>
     <div>statusMessage = {{statusMessage}}</div>
