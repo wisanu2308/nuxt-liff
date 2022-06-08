@@ -39,6 +39,8 @@
 
     <div>isInClient = {{isInClient}}</div>
     <div>isLoggedIn = {{isLoggedIn}}</div>
+    <div>getProfile = {{getProfile}}</div>
+
   </div>
     
 </template>
@@ -53,6 +55,7 @@ export default {
       txtPhone: "",
       isInClient: "",
       isLoggedIn: "",
+      getProfile: "",
     }
   },
 
@@ -62,19 +65,25 @@ export default {
       // if (!liff.isLoggedIn()) {
       //   liff.login({ redirectUri: "https://example.com/path" });
       // }
-      this.isInClient = liff.isInClient()
-      this.isLoggedIn = liff.isLoggedIn()
+      
+
+      // console.log(liff.getOS())
+      // console.log(liff.getLanguage())
+      // console.log(liff.isInClient())
+      // console.log(liff.isLoggedIn())
 
       if (!liff.isLoggedIn()) {
         liff.login();
         this.isLoggedIn = liff.isLoggedIn()
+        this.isInClient = liff.isInClient()
+        this.isLoggedIn = liff.isLoggedIn()
+      } else {
+        this.isInClient = liff.isInClient()
+        this.isLoggedIn = liff.isLoggedIn()
+        this.getProfile = liff.getProfile()
       }
 
-      console.log(liff.getOS())
-      console.log(liff.getLanguage())
-      console.log(liff.isInClient())
-      console.log(liff.isLoggedIn())
-
+      
       // this.$liffInit
       //   .then(() => {
       //     this.sdkVersion = liff.getVersion();
