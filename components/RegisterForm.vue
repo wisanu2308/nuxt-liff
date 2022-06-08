@@ -84,6 +84,14 @@ export default {
 
       if (confirm("ต้องการบันทึกข้อมูล?")) {
 
+        this.$liff.getProfile().then(profile => {
+          this.userProfileId = profile.userId;
+          this.displayName = profile.displayName;
+          this.statusMessage = profile.statusMessage;
+        }).catch(
+          err => console.error(err)
+        )
+
         // this.$liff.sendMessages([
         //   {
         //     type: "text",
