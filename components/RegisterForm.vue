@@ -79,8 +79,8 @@ export default {
         this.$liff.sendMessages([
           {
             type: "text",
-            text: this.displayName
-          }
+            text: "Hello, World!",
+          },
         ])
 
         // liff.sendMessages([
