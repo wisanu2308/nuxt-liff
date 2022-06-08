@@ -62,32 +62,21 @@ export default {
   },
 
   mounted () {
-
     if (!liff.isLoggedIn()) {
       liff.login()
-      setProfile()
-    } else{
-      setProfile()
     }
 
+    console.log(liff.getProfile())
+    liff.getProfile().then(profile => {
+      this.userProfileId = profile.userId;
+      this.displayName = profile.displayName;
+      this.statusMessage = profile.statusMessage;
+    }).catch(
+      err => console.error(err)
+    )
   },
 
   methods: {
-
-    setProfile() {
-
-      console.log(liff.getProfile())
-
-      liff.getProfile().then(profile => {
-        this.userProfileId = profile.userId;
-        this.displayName = profile.displayName;
-        this.statusMessage = profile.statusMessage;
-      }).catch(
-        err => console.error(err)
-      )
-
-    },
-
     submitForm() {
       if (confirm("ต้องการบันทึกข้อมูล?")) {
         liff.sendMessages([
