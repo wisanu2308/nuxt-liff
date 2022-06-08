@@ -40,7 +40,10 @@
     <div>isInClient = {{isInClient}}</div>
     <div>isLoggedIn = {{isLoggedIn}}</div>
     <div>getAccessToken = {{getAccessToken}}</div>
-    <div>getProfile = {{getProfile.displayName}}</div>
+    <div>userProfile = {{userProfile}}</div>
+    <div>displayName = {{displayName}}</div>
+    <div>statusMessage = {{statusMessage}}</div>
+    <div>pictureUrl = {{pictureUrl}}</div>
 
   </div>
     
@@ -57,7 +60,10 @@ export default {
       isInClient: "",
       isLoggedIn: "",
       getAccessToken: "",
-      getProfile: "",
+      userProfile: "",
+      displayName: "",
+      statusMessage: "",
+      pictureUrl: "",
     }
   },
 
@@ -73,7 +79,14 @@ export default {
         this.isInClient = liff.isInClient()
         this.isLoggedIn = liff.isLoggedIn()
         this.getAccessToken = liff.getAccessToken()
-        this.getProfile = liff.getProfile()
+        liff.getProfile().then(profile => {
+          this.userProfile = profile.userId;
+          this.displayName = profile.displayName;
+          this.statusMessage = profile.statusMessage;
+          this.pictureUrl = profile.pictureUrl;
+        }).catch(
+          err => console.error(err)
+        );
         console.log(liff.getProfile())
       }
 
