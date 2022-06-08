@@ -75,11 +75,19 @@ export default {
     submitForm() {
       
       if (confirm("ต้องการบันทึกข้อมูล?")) {
+
         liff.sendMessages([
           {
-            "type": "flex",
-            "altText": "This is a Flex message",
-            "contents": {
+            type: "text",
+            text: `I am ${this.displayName}`
+          }
+        ])
+
+        liff.sendMessages([
+          {
+            type: "flex",
+            altText: "This is a Flex message",
+            contents: {
               "type": "bubble",
               "body": {
                 "type": "box",
