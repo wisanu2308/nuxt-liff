@@ -39,7 +39,7 @@
 
     <div class="w-full">isInClient = {{isInClient}}</div>
     <div class="w-full">isLoggedIn = {{isLoggedIn}}</div>
-    <div class="w-full">userProfile = {{userProfile}}</div>
+    <div class="w-full">userProfileId = {{userProfileId}}</div>
     <div class="w-full">displayName = {{displayName}}</div>
     <div class="w-full">statusMessage = {{statusMessage}}</div>
 
@@ -55,9 +55,7 @@ export default {
     return {
       txtName: "",
       txtPhone: "",
-      isInClient: "",
-      isLoggedIn: "",
-      userProfile: "",
+      userProfileId: "",
       displayName: "",
       statusMessage: "",
     }
@@ -68,20 +66,22 @@ export default {
 
       if (!liff.isLoggedIn()) {
         liff.login();
-        this.isLoggedIn = liff.isLoggedIn()
-        this.isInClient = liff.isInClient()
-        this.isLoggedIn = liff.isLoggedIn()
       } else {
-        this.isInClient = liff.isInClient()
-        this.isLoggedIn = liff.isLoggedIn()
+
         liff.getProfile().then(profile => {
-          this.userProfile = profile.userId;
+          this.userProfileId = profile.userId;
           this.displayName = profile.displayName;
           this.statusMessage = profile.statusMessage;
         }).catch(
           err => console.error(err)
-        );
-        console.log(liff.getProfile())
+        )
+
+        liff.sendMessages([
+          {
+            type: "text",
+            text: "Hello, World!",
+          },
+        ])
       }
 
       // if (confirm("ต้องการบันทึกข้อมูล?")) {
