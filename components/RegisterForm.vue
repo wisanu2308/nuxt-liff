@@ -37,7 +37,7 @@
       บันทึก
     </div>
 
-    {{liffError}}
+    isInClient = {{liffError}}
   </div>
     
 </template>
@@ -60,7 +60,7 @@ export default {
       // if (!liff.isLoggedIn()) {
       //   liff.login({ redirectUri: "https://example.com/path" });
       // }
-      liffError = liff.isInClient()
+      this.liffError = liff.isInClient()
       console.log(liff.getOS())
       console.log(liff.getLanguage())
       console.log(liff.isInClient())
