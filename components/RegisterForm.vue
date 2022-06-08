@@ -37,11 +37,7 @@
       บันทึก
     </div>
     
-    <div>txtName : {{this.txtName}}</div>
-    <div>txtPhone : {{this.txtPhone}}</div>
-    <div>userProfileId : {{this.userProfileId}}</div>
-    <div>displayName : {{this.displayName}}</div>
-    <div>statusMessage : {{this.statusMessage}}</div>
+    <div>errMessage : {{this.errMessage}}</div>
 
   </div>
     
@@ -58,6 +54,7 @@ export default {
       userProfileId: "",
       displayName: "",
       statusMessage: "",
+      errMessage: "",
     }
   },
 
@@ -94,7 +91,9 @@ export default {
             type: "text",
             text: `I am ${this.displayName}`,
           },
-        ])
+        ]).catch(
+          err => this.errMessage = err
+        )
 
         // liff.sendMessages([
         //   {
