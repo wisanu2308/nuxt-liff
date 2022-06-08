@@ -66,6 +66,8 @@ export default {
     if (!liff.isLoggedIn()) {
       liff.login()
       setProfile()
+    } else{
+      setProfile()
     }
 
   },
