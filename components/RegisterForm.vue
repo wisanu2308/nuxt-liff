@@ -74,8 +74,8 @@ export default {
   },
 
   methods: {
-    submitForm() {
 
+    setProfile() {
       this.$liff.getProfile().then(profile => {
         this.userProfileId = profile.userId;
         this.displayName = profile.displayName;
@@ -83,7 +83,12 @@ export default {
       }).catch(
         err => console.error(err)
       )
+    },
 
+    submitForm() {
+
+      this.setProfile()
+      
       if (confirm("ต้องการบันทึกข้อมูล?")) {
 
         this.$liff.sendMessages([
