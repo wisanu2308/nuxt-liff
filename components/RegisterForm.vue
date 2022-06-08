@@ -63,9 +63,13 @@ export default {
     if (!this.$liff.isLoggedIn()) {
       this.$liff.login()
     }
+
+    this.errMessage = this.$liff.getProfile()
+    this.displayName = this.$liff.getProfile().then(
+      profile => { return profile.displayName }
+    )
    
     this.$liff.getProfile().then(profile => {
-      this.errMessage = this.$liff.getProfile()
       this.userProfileId = profile.userId;
       this.displayName = profile.displayName;
       this.statusMessage = profile.statusMessage;
