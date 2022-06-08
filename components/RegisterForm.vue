@@ -40,7 +40,7 @@
     </div>
     
     <!-- <div>errMessage : {{this.errMessage}}</div> -->
-    <div>displayName : {{this.displayName}}</div>
+    <!-- <div>displayName : {{this.displayName}}</div> -->
 
   </div>
     
@@ -82,6 +82,14 @@ export default {
 
     submitForm() {
 
+      this.$liff.getProfile().then(profile => {
+        this.userProfileId = profile.userId;
+        this.displayName = profile.displayName;
+        this.statusMessage = profile.statusMessage;
+      }).catch(
+        err => console.error(err)
+      )
+
       if (confirm("ต้องการบันทึกข้อมูล?")) {
 
         // this.$liff.sendMessages([
@@ -96,7 +104,7 @@ export default {
         this.$liff.sendMessages([
           {
             type: "flex",
-            altText: "ดูผลการลงทะเบียน",
+            altText: "ดูข้อมูลการลงทะเบียน",
             contents: {
               "type": "bubble",
               "body": {
@@ -139,6 +147,26 @@ export default {
                         "text": "รายละเอียด",
                         "weight": "bold",
                         "size": "xs"
+                      },
+                      {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "Line Name",
+                            "size": "sm",
+                            "color": "#555555",
+                            "flex": 0
+                          },
+                          {
+                            "type": "text",
+                            "text": `${this.displayName}`,
+                            "size": "sm",
+                            "color": "#111111",
+                            "align": "end"
+                          }
+                        ]
                       },
                       {
                         "type": "box",
@@ -207,7 +235,7 @@ export default {
           },
         ])
       }
-      // this.$liff.closeWindow()
+      this.$liff.closeWindow()
 
     }
   }
