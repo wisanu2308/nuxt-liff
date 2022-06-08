@@ -59,11 +59,11 @@ export default {
 
   mounted () {
 
-    if (!liff.isLoggedIn()) {
-      liff.login()
+    if (!this.$liff.isLoggedIn()) {
+      this.$liff.login()
     }
 
-    liff.getProfile().then(p => {
+    this.$liff.getProfile().then(p => {
       this.userProfileId = p.userId;
       this.displayName = p.displayName;
       this.statusMessage = p.statusMessage;
@@ -76,10 +76,10 @@ export default {
       
       if (confirm("ต้องการบันทึกข้อมูล?")) {
 
-        liff.sendMessages([
+        this.$liff.sendMessages([
           {
             type: "text",
-            text: `I am ${this.displayName}`
+            text: this.displayName
           }
         ])
 
