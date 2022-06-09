@@ -7,24 +7,24 @@
       </div>
       <div class="w-full lg:w-1/2 mx-auto px-4 py-4 space-y-4 text-xl">
         
-        <div class="flex flex-col lg:flex-row justify-between items-left">
+        <!-- <div class="flex flex-col lg:flex-row justify-between items-left">
           <div class="font-bold">USER ID</div>
           <div>{{userProfileId}}</div>
-        </div>
+        </div> -->
 
-        <div class="flex flex-row justify-between">
-          <div class="font-bold">Display Name</div>
+        <div class="flex flex-row justify-center">
+          <!-- <div class="font-bold">Display Name</div> -->
           <div>{{displayName}}</div>
         </div>
 
-        <div class="flex flex-row justify-between">
+        <!-- <div class="flex flex-row justify-between">
           <div class="font-bold">Status Message</div>
           <div>{{statusMessage}}</div>
-        </div>
+        </div> -->
 
         <div class="w-full flex flex-col justify-between items-center">
-          <div class="font-bold">Profile Image</div>
-          <div class="px-4 rounded-xl"> 
+          <!-- <div class="font-bold">Profile Image</div> -->
+          <div class="px-8 rounded-xl"> 
             <img :src="pictureUrl" class="rounded-xl">
           </div>
         </div>
@@ -38,7 +38,7 @@
 
 export default {
 
-  layout: 'defaultLayout',
+  // layout: 'defaultLayout',
 
   data() {
     return {
