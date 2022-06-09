@@ -30,6 +30,14 @@
         </div>
 
       </div>
+
+      <div 
+        @click="this.$liff.closeWindow()"
+        class="bg-green-600 flex justify-center py-2 my-10 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-green-700"
+      >
+        ปิด
+      </div>
+
     </div>
   </div>
 </template>
@@ -65,6 +73,6 @@ export default {
     )
   },
 
-  
 }
+
 </script>
