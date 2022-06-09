@@ -48,6 +48,15 @@
 
 <script>
 
+// const lineNotify = require('line-notify-nodejs')('piAB6SgBUcb9RSh15jzdO215gK7TOeIS2vYtnT4DHlS');
+
+// lineNotify.notify({
+//   message: 'Liff App was Registed',
+// }).then(() => {
+//   console.log('send completed!');
+// });
+
+
 export default {
 
   data() {
@@ -63,10 +72,10 @@ export default {
 
   mounted () {
 
-    if (!this.$liff.isLoggedIn()) {
-      this.$liff.login()
-    }
-
+    // if (!this.$liff.isLoggedIn()) {
+    //   this.$liff.login()
+    // }
+    
     // this.errMessage = liff.getProfile()
     // liff.getProfile().then(profile => {
     //   this.userProfileId = profile.userId;
@@ -84,7 +93,7 @@ export default {
 
       if (confirm("ต้องการบันทึกข้อมูล?")) {
 
-this.$liff.sendMessages([
+        this.$liff.sendMessages([
           {
             type: "flex",
             altText: "ดูผลการลงทะเบียน",
@@ -200,6 +209,8 @@ this.$liff.sendMessages([
 
           // Line Notify Here
           const lineNotify = require('line-notify-nodejs')('piAB6SgBUcb9RSh15jzdO215gK7TOeIS2vYtnT4DHlS');
+
+          console.log(lineNotify)
 
           lineNotify.notify({
             message: 'Liff App was Registed',
