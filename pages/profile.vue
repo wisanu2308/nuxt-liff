@@ -6,7 +6,9 @@
         ข้อมูลโปรไฟล์
       </div>
       <div class="w-1/2 mx-auto py-4 space-y-4 text-xl">
-
+        
+        <div>this_liffId = {{this_liffId}}</div>
+        
         <div class="flex flex-row justify-between">
           <div class="font-bold">USER ID</div>
           <div>{{userProfileId}}</div>
@@ -46,6 +48,7 @@ export default {
       displayName: "",
       pictureUrl: "",
       statusMessage: "",
+      this_liffId: "1657200038-9Nbwq8ob",
     }
   },
 
