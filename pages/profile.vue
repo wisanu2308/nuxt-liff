@@ -53,18 +53,20 @@ export default {
 
     const thisLiff = liff.init({liffId: "1657200038-9Nbwq8ob"})
 
-    if (!thisLiff.isLoggedIn()) {
-      thisLiff.login();
-    }
+    console.log(thisLiff)
 
-    thisLiff.getProfile().then(profile => {
-      this.userProfileId = profile.userId;
-      this.displayName = profile.displayName;
-      this.pictureUrl = profile.pictureUrl;
-      this.statusMessage = profile.statusMessage;
-    }).catch(
-      err => console.error(err)
-    )
+    // if (!thisLiff.isLoggedIn()) {
+    //   thisLiff.login();
+    // }
+
+    // thisLiff.getProfile().then(profile => {
+    //   this.userProfileId = profile.userId;
+    //   this.displayName = profile.displayName;
+    //   this.pictureUrl = profile.pictureUrl;
+    //   this.statusMessage = profile.statusMessage;
+    // }).catch(
+    //   err => console.error(err)
+    // )
   },
 
   
