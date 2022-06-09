@@ -36,8 +36,6 @@
 
 <script>
 
-import liff from '@line/liff';
-
 export default {
 
   layout: 'defaultLayout',
