@@ -5,7 +5,7 @@
       <div class="text-2xl font-bold text-blue-500 py-10">ออกจากระบบเรียบร้อย</div>
       <div class="w-3/5 mx-auto">
         <div 
-          @click="closeWindow"
+          @click="closeWindow()"
           class="text-xl text-white bg-green-600 px-4 py-2 text-center rounded-full cursor-pointer transition-all duration-300 hover:bg-green-500"
         >ปิด</div>
       </div>
