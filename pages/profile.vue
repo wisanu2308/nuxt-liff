@@ -35,6 +35,9 @@
 </template>
 
 <script>
+
+import liff from '@line/liff';
+
 export default {
 
   layout: 'defaultLayout',
@@ -50,11 +53,13 @@ export default {
 
   mounted () {
 
+    liff.init({liffId: "1657200038-9Nbwq8ob"})
+
     if (!liff.isLoggedIn()) {
       liff.login();
     }
 
-    this.$liff.getProfile().then(profile => {
+    liff.getProfile().then(profile => {
       this.userProfileId = profile.userId;
       this.displayName = profile.displayName;
       this.pictureUrl = profile.pictureUrl;
