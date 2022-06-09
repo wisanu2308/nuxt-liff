@@ -9,7 +9,7 @@ export default (_, inject) => {
   // You can access liff object as this.$liff by inject()
   inject('liff', liff);
 
-  // // execute liff.init()
+  // execute liff.init()
   const initResult = liff.init({liffId: "1657200038-ba6qNZd6"})
     .then(() => {
       console.log('LIFF init succeeded.');

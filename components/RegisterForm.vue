@@ -67,14 +67,14 @@ export default {
       this.$liff.login()
     }
 
-    this.errMessage = this.$liff.getProfile()
-    this.$liff.getProfile().then(profile => {
-      this.userProfileId = profile.userId;
-      this.displayName = profile.displayName;
-      this.statusMessage = profile.statusMessage;
-    }).catch(
-      err => console.error(err)
-    )
+    // this.errMessage = liff.getProfile()
+    // liff.getProfile().then(profile => {
+    //   this.userProfileId = profile.userId;
+    //   this.displayName = profile.displayName;
+    //   this.statusMessage = profile.statusMessage;
+    // }).catch(
+    //   err => console.error(err)
+    // )
     
   },
 

@@ -7,8 +7,6 @@
       </div>
       <div class="w-1/2 mx-auto py-4 space-y-4 text-xl">
         
-        <div>this_liffId = {{this_liffId}}</div>
-        
         <div class="flex flex-row justify-between">
           <div class="font-bold">USER ID</div>
           <div>{{userProfileId}}</div>
@@ -48,28 +46,23 @@ export default {
       displayName: "",
       pictureUrl: "",
       statusMessage: "",
-      this_liffId: "1657200038-9Nbwq8ob",
     }
   },
 
   mounted () {
+    
+    if (!this.$liff.isLoggedIn()) {
+      this.$liff.login();
+    }
 
-    const thisLiff = liff.init({liffId: "1657200038-9Nbwq8ob"})
-
-    console.log(thisLiff)
-
-    // if (!thisLiff.isLoggedIn()) {
-    //   thisLiff.login();
-    // }
-
-    // thisLiff.getProfile().then(profile => {
-    //   this.userProfileId = profile.userId;
-    //   this.displayName = profile.displayName;
-    //   this.pictureUrl = profile.pictureUrl;
-    //   this.statusMessage = profile.statusMessage;
-    // }).catch(
-    //   err => console.error(err)
-    // )
+    this.$liff.getProfile().then(profile => {
+      this.userProfileId = profile.userId;
+      this.displayName = profile.displayName;
+      this.pictureUrl = profile.pictureUrl;
+      this.statusMessage = profile.statusMessage;
+    }).catch(
+      err => console.error(err)
+    )
   },
 
   
