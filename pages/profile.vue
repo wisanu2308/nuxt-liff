@@ -5,7 +5,7 @@
       <div class="text-2xl font-bold text-blue-800 py-4">
         ข้อมูลโปรไฟล์
       </div>
-      <div class="w-1/2 mx-auto py-4 space-y-4 text-xl">
+      <div class="w-full lg:w-1/2 mx-auto py-4 space-y-4 text-xl">
         
         <div class="flex flex-row justify-between">
           <div class="font-bold">USER ID</div>
