@@ -51,13 +51,13 @@ export default {
 
   mounted () {
 
-    liff.init({liffId: "1657200038-9Nbwq8ob"})
+    const thisLiff = liff.init({liffId: "1657200038-9Nbwq8ob"})
 
-    if (!liff.isLoggedIn()) {
-      liff.login();
+    if (!thisLiff.isLoggedIn()) {
+      thisLiff.login();
     }
 
-    liff.getProfile().then(profile => {
+    thisLiff.getProfile().then(profile => {
       this.userProfileId = profile.userId;
       this.displayName = profile.displayName;
       this.pictureUrl = profile.pictureUrl;
