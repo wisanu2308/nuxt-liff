@@ -32,8 +32,8 @@
       </div>
 
       <div 
-        @click="this.$liff.closeWindow()"
-        class="bg-green-600 flex justify-center py-2 my-10 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-green-700"
+        @click="closeProfile()"
+        class="w-1/5 bg-green-600 flex justify-center py-2 my-10 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-green-700"
       >
         ปิด
       </div>
@@ -59,9 +59,9 @@ export default {
 
   mounted () {
     
-    if (!this.$liff.isLoggedIn()) {
-      this.$liff.login();
-    }
+    // if (!this.$liff.isLoggedIn()) {
+    //   this.$liff.login();
+    // }
 
     this.$liff.getProfile().then(profile => {
       this.userProfileId = profile.userId;
@@ -73,6 +73,12 @@ export default {
     )
   },
 
-}
+  methods: {
+    closeProfile() {
+      this.$liff.closeWindow()
+    }
+  },
 
+  
+}
 </script>
