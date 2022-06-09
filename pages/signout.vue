@@ -19,12 +19,10 @@ export default {
   layout: 'defaultLayout',
 
   mounted () {
-
-    if (this.$liff.isLoggedIn()) {
-      this.$liff.logout()
-      
+    if (liff.isLoggedIn()) {
+      liff.logout();
+      console.log("SignOut!")
     }
-    
   },
 }
 </script>
