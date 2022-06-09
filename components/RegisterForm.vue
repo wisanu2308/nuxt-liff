@@ -48,14 +48,7 @@
 
 <script>
 
-// const lineNotify = require('line-notify-nodejs')('piAB6SgBUcb9RSh15jzdO215gK7TOeIS2vYtnT4DHlS');
-
-// lineNotify.notify({
-//   message: 'Liff App was Registed',
-// }).then(() => {
-//   console.log('send completed!');
-// });
-
+const lineNotify = require('line-notify-nodejs')('piAB6SgBUcb9RSh15jzdO215gK7TOeIS2vYtnT4DHlS');
 
 export default {
 
@@ -208,12 +201,8 @@ export default {
         ]).then( () => {
 
           // Line Notify Here
-          const lineNotify = require('line-notify-nodejs')('piAB6SgBUcb9RSh15jzdO215gK7TOeIS2vYtnT4DHlS');
-
-          console.log(lineNotify)
-
           lineNotify.notify({
-            message: 'Liff App was Registed',
+            message: `${this.txtName} ลงทะเบียนเรียบร้อย`,
           }).then(() => {
             console.log('send completed!');
           });
