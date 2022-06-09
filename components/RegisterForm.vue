@@ -49,6 +49,11 @@
 <script>
 
 const lineNotify = require('line-notify-nodejs')('piAB6SgBUcb9RSh15jzdO215gK7TOeIS2vYtnT4DHlS');
+lineNotify.notify({
+  message: `ลงทะเบียนเรียบร้อย`,
+}).then(() => {
+  console.log('send completed!');
+});
 
 export default {
 
@@ -82,7 +87,7 @@ export default {
 
   methods: {
 
-    submitForm() {
+    async submitForm() {
 
       if (confirm("ต้องการบันทึกข้อมูล?")) {
 
@@ -201,11 +206,7 @@ export default {
         ]).then( () => {
 
           // Line Notify Here
-          lineNotify.notify({
-            message: `${this.txtName} ลงทะเบียนเรียบร้อย`,
-          }).then(() => {
-            console.log('send completed!');
-          });
+          
 
           this.$liff.closeWindow()
         })
