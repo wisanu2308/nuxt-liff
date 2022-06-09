@@ -84,16 +84,7 @@ export default {
 
       if (confirm("ต้องการบันทึกข้อมูล?")) {
 
-        // this.$liff.sendMessages([
-        //   {
-        //     type: "text",
-        //     text: `I am ${this.displayName}`,
-        //   },
-        // ]).catch(
-        //   err => this.errMessage = err
-        // )
-
-        this.$liff.sendMessages([
+this.$liff.sendMessages([
           {
             type: "flex",
             altText: "ดูผลการลงทะเบียน",
@@ -206,6 +197,16 @@ export default {
             
           },
         ]).then( () => {
+
+          // Line Notify Here
+          const lineNotify = require('line-notify-nodejs')('piAB6SgBUcb9RSh15jzdO215gK7TOeIS2vYtnT4DHlS');
+
+          lineNotify.notify({
+            message: 'Liff App was Registed',
+          }).then(() => {
+            console.log('send completed!');
+          });
+
           this.$liff.closeWindow()
         })
       }
