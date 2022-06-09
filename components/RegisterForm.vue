@@ -48,13 +48,6 @@
 
 <script>
 
-const lineNotify = require('line-notify-nodejs')('piAB6SgBUcb9RSh15jzdO215gK7TOeIS2vYtnT4DHlS');
-lineNotify.notify({
-  message: `ลงทะเบียนเรียบร้อย`,
-}).then(() => {
-  console.log('send completed!');
-});
-
 export default {
 
   data() {
@@ -70,9 +63,9 @@ export default {
 
   mounted () {
 
-    // if (!this.$liff.isLoggedIn()) {
-    //   this.$liff.login()
-    // }
+    if (!this.$liff.isLoggedIn()) {
+      this.$liff.login()
+    }
     
     // this.errMessage = liff.getProfile()
     // liff.getProfile().then(profile => {
