@@ -69,7 +69,7 @@ export default {
 
   methods: {
 
-  submitForm() {
+    submitForm() {
 
       if (confirm("ต้องการบันทึกข้อมูล?")) {
 
