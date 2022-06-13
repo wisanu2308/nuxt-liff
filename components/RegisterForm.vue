@@ -62,25 +62,14 @@ export default {
   },
 
   mounted () {
-
-    if (!this.$liff.isLoggedIn()) {
-      this.$liff.login()
-    }
-    
-    // this.errMessage = liff.getProfile()
-    // liff.getProfile().then(profile => {
-    //   this.userProfileId = profile.userId;
-    //   this.displayName = profile.displayName;
-    //   this.statusMessage = profile.statusMessage;
-    // }).catch(
-    //   err => console.error(err)
-    // )
-    
+    // if (!this.$liff.isLoggedIn()) {
+    //   this.$liff.login()
+    // }
   },
 
   methods: {
 
-    async submitForm() {
+  submitForm() {
 
       if (confirm("ต้องการบันทึกข้อมูล?")) {
 
@@ -196,10 +185,10 @@ export default {
             }
             
           },
-        ]).then( () => {
+        ]).then( async () => {
 
           // Line Notify Here
-          
+          const action = await this.$axios.$get('https://wsn-line-notify.herokuapp.com/')
 
           this.$liff.closeWindow()
         })
