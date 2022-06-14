@@ -189,10 +189,9 @@ export default {
 
           // Line Notify Here
           const action = await this.$axios.get('https://wsn-line-notify.herokuapp.com/?message=James').then((res) => {
-            console.log("Send Message")
+            this.$liff.closeWindow()
           })
-
-          this.$liff.closeWindow()
+          
         })
       }
 
