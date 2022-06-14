@@ -188,7 +188,7 @@ export default {
         ]).then( async () => {
 
           // Line Notify Here
-          const action = await this.$axios.get('https://wsn-line-notify.herokuapp.com/?message=James').then((res) => {
+          const action = await this.$axios.$post('https://wsn-line-notify.herokuapp.com/').then(() => {
             this.$liff.closeWindow()
           })
           
